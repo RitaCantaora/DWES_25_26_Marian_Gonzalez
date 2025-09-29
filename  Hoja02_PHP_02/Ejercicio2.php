@@ -6,6 +6,12 @@
     <title>Ejercicio2</title>
 </head>
 <body>
+
+
+<h2>
+ Realiza un programa que calcule la media de tres números.
+    
+</h2>
     <?php
 
 $numero1=5;
