@@ -16,14 +16,14 @@
 
     function esPrimo($numero)
     {
-        if ($numero < 2) return "no es primo";
+        if ($numero < 2) return false;
 
         for ($i = 2; $i < $numero; $i++) {
-            if ($numero % $i == 0) {
-                return "no es primo";
+            if ($numero % $i == 0) { 
+                return false;
             }
         }
-        return "es primo";
+        return true;
     }
 
 
@@ -41,21 +41,21 @@
     }
 
 
-    function esParOImpar($numero)
+    function esPar($numero)
     {
         if ($numero % 2 == 0) {
-            return "par";
+            return true;
         } else {
-            return "impar";
+            return false;
         }
     }
 
 
 
     echo "Para el número: " . $numero . "<br>";
-    echo "1. " . esPrimo($numero) . "<br>";
+    echo "1. " . esPrimo($numero) ? "$numero es primo" :"$numero no es primo". "<br>";
     echo "2. Factorial: " . calcularFactorial($numero) . "<br>";
-    echo "3. " . esParOImpar($numero) . "<br>";
+    echo "3. " . esPar($numero) ? " $num es par " : "$num no es par"."<br>";
 
     ?>
 </body>
