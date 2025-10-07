@@ -23,7 +23,7 @@
 
             if ($cantidad <= $euro) {
                 $numeroEuros = $cantidad % $euro;
-                $cantidadTotal =$numeroEuros-$euro;
+                $cantidadTotal = $numeroEuros*$euro;
                 $array[$euros] = $cantidadTotal;
             }
         }

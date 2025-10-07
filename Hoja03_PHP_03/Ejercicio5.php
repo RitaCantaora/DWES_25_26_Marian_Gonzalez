@@ -17,16 +17,19 @@
 
 <body>
     <?php
-    
+
+
+
     $estudiantes = [
-        [
-            "Juan" => ["DWES" => 3, "DWC =>5", "FOL" => 1],
-            "Pepe" => ["DWES" => 5, "DWC" =>2, "FOL" => 6],
+        
+            "Juan" => ["DWES" => 3, "DWC" => 5, "FOL" => 1],
+            "Pepe" => ["DWES" => 5, "DWC" => 2, "FOL" => 6],
             "Ana" => ["DWES" => 5, "DWC" => 2, "FOL" => 6],
 
-        ]
+        
     ];
-    function promedioFacil(array $estudiantes,string $nombre )
+
+    function promedioFacil(array $estudiantes, string $nombre)
     {
 
         $suma = 0;
@@ -45,7 +48,7 @@
         $mejorEstudiante = "";
         $mejorPromedio = 0;
 
-        foreach ($estudiantes as $nombre=>$notas) {
+        foreach ($estudiantes as $nombre => $notas) {
             $promedio = promedioFacil($estudiantes, $nombre);
             if ($promedio > $mejorPromedio) {
                 $mejorPromedio = $promedio;
@@ -56,50 +59,47 @@
     }
 
 
-        $promedio = promedioFacil($estudiantes , "Juan");
-        echo "Promedio de " . $estudiantes[$nombre] . ": " . $promedio . "<br>";
-    
 
-       echo "El mejor estudiante es: " . mejorEstudiante($estudiantes);  
+    function mostrarNotas(array $estudiantes)
+    {
+        echo "<table border='1'>";
+        echo "<tr><th>Alumno</th><th>DWES</th><th>DWC</th><th>FOL</th></tr>";
 
-
-function mostrarNotas(array $estudiantes) {
-    echo "<table border='1'>";
-    echo "<tr><th>Alumno</th><th>DWES</th><th>DWC</th><th>FOL</th></tr>";
-    
-    foreach ($estudiantes as $nombre => $notas) {
-        echo "<tr>";
-        echo "<td>$nombre</td>";
-        foreach ($notas as $nota) {
-            echo "<td>$nota</td>";
+        foreach ($estudiantes as $nombre => $notas) {
+            echo "<tr>";
+            echo "<td>$nombre</td>";
+            foreach ($notas as $nota) {
+                echo "<td>$nota</td>";
+            }
+            echo "</tr>";
         }
-        echo "</tr>";
+        echo "</table>";
     }
-    echo "</table>";
-}
-
-/*
-
-$claves = array_keys($estudiantes); // ["Juan","Pepe","Ana"]
-for ($i = 0; $i < count($claves); $i++) {
-    $nombre = $claves[$i];
-    $notas  = $estudiantes[$nombre];
-    echo "$i -> $nombre\n";
-}
 
 
-*/
+    $promedio = promedioFacil($estudiantes, "Ana");
+    echo "Promedio de Ana: " . $promedio . "<br>";
+
+
+
+    echo "El mejor estudiante es: " . mejorEstudiante($estudiantes) . "<br>";
+
+
+    mostrarNotas($estudiantes);
+
+
+    /*
 
 
     $estudiantes[[
-            "nombre" => "Juan",
-            "modulo" => ["DWES" => 3, "DWC =>5", "FOL" => 1],
-            "nombre" => "Pepe",
-            "modulo" => ["DWES" => 5, "DWC =>2", "FOL" => 6],
-            "nombre" => "Ana",
-            "modulo" => ["DWES" => 5, "DWC =>2", "FOL" => 6],
+        "nombre" => "Juan",
+        "modulo" => ["DWES" => 3, "DWC =>5", "FOL" => 1],
+        "nombre" => "Pepe",
+        "modulo" => ["DWES" => 5, "DWC =>2", "FOL" => 6],
+        "nombre" => "Ana",
+        "modulo" => ["DWES" => 5, "DWC =>2", "FOL" => 6],
 
-        ]];
+    ]];
 
     function promedio($estudiantes)
     {
@@ -111,6 +111,7 @@ for ($i = 0; $i < count($claves); $i++) {
             }
         }
     }
+        */
     ?>
 </body>
 
